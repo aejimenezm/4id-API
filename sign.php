@@ -21,18 +21,18 @@
 			$documentName="PDF_Prueba.pdf";
 			$documentID="_01_online";
 			$tipo="PAdES";
-			$url_4identity_server_sign="http://as-demo.bit4id.org/smartengine/bit4id-sign.min.js";
+			$url_4identity_server_sign="http://connectordemo.services.bit4id.org/bit4id-sign.min.js";
 		?>
-		<form class="bit4id-sign" method="post" action="C:/xampp/htdocs/sign-ok.php">
+		<form class="bit4id-sign" method="post" action="<?php echo $folders; ?>sign-ok.php">
 			<div class="bit4id-signReq" >
 				<div class="bit4id-document">C:/xampp/htdocs/PDF_Prueba.pdf</div>
-				<div class="bit4id-documentName">documento_online </div>
-				<div class="bit4id-documentID">_01_online</div>
-				<div class="bit4id-signatureType">PAdES</div>
+				<div class="bit4id-documentName"><?php echo $documentName; ?></div>
+				<div class="bit4id-documentID"><?php echo $documentID; ?></div>
+				<div class="bit4id-signatureType"><?php echo $tipo; ?></div>
 			</div>
 			<div id="bit4id-status">loading</div>
 			<input type="submit" disabled="disabled" value="Firmar" />
 		</form>
-		<script src="https://www.4identity.eu/smartengine/bit4id-sign.min.js"></script>
+		<script src="<?php echo $url_4identity_server_sign; ?>"></script>
 	</body>
 </html>
